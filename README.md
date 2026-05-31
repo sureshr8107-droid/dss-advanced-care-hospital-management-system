@@ -1,122 +1,184 @@
 # DSS Advanced Care – Hospital Appointment Booking System
-## Setup Instructions for XAMPP
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](screenshots/home-page.png)
+
+### 👨‍⚕️ Doctor Dashboard
+
+![Doctor Dashboard](screenshots/doctor-page.png)
 
 ---
 
-### 📋 Prerequisites
-- XAMPP installed (Apache + MySQL + PHP 7.4+)
-- Web browser (Chrome/Firefox recommended)
+## 🌟 Project Overview
+
+DSS Advanced Care is a Hospital Appointment Booking System developed using PHP, MySQL, HTML, CSS, and JavaScript. The system allows patients to register, select health concerns, book appointments with doctors, and manage appointment history. Doctors can securely log in and view appointments through a dedicated dashboard.
 
 ---
 
-### 🚀 Setup Steps
+## 🛠️ Technologies Used
 
-#### Step 1: Copy Files
-Copy the entire `dss_advanced_care` folder to:
-```
+* PHP
+* MySQL
+* HTML5
+* CSS3
+* JavaScript
+* XAMPP
+
+---
+
+## ✨ Features
+
+* Patient Registration & Login
+* Doctor Login & Dashboard
+* Disease-Based Doctor Selection
+* Appointment Booking System
+* Appointment History Management
+* Doctor Specialization Filtering
+* Payment Simulation
+* Responsive User Interface
+* Secure Password Hashing
+* MySQL Database Integration
+
+---
+
+## 📋 Prerequisites
+
+* XAMPP (Apache + MySQL)
+* PHP 7.4 or above
+* Modern Web Browser
+
+---
+
+## 🚀 Installation & Setup
+
+### Step 1: Copy Project Files
+
+Copy the project folder to:
+
+```text
 C:\xampp\htdocs\dss_advanced_care\
 ```
-(On Linux/Mac: `/opt/lampp/htdocs/dss_advanced_care/`)
 
-#### Step 2: Start XAMPP
-- Open XAMPP Control Panel
-- Start **Apache** and **MySQL**
+### Step 2: Start XAMPP
 
-#### Step 3: Create Database
-1. Open browser → go to `http://localhost/phpmyadmin`
-2. Click **"New"** to create a database → Name it `dss_hospital` → Click **Create**
-3. Click on `dss_hospital` in the left panel
-4. Click **SQL** tab
-5. Copy-paste contents of `db/setup.sql` and click **Go**
+* Open XAMPP Control Panel
+* Start Apache
+* Start MySQL
 
-#### Step 4: Access the Website
-Open browser → go to:
+### Step 3: Create Database
+
+1. Open:
+
+```text
+http://localhost/phpmyadmin
 ```
+
+2. Create a database named:
+
+```text
+dss_hospital
+```
+
+3. Open SQL tab
+4. Import:
+
+```text
+db/setup.sql
+```
+
+### Step 4: Run the Project
+
+Open:
+
+```text
 http://localhost/dss_advanced_care/
 ```
 
 ---
 
-### 👥 Test Accounts
+## 👥 Demo Doctor Login
 
-#### Patient Login
-- Register a new account at `/register.php`
-- Or use the registration page to create your account
+| Doctor       | Email                                                   | Password |
+| ------------ | ------------------------------------------------------- | -------- |
+| Suresh R     | [suresh@dsscare.com](mailto:suresh@dsscare.com)         | password |
+| Mathivanan M | [mathivanan@dsscare.com](mailto:mathivanan@dsscare.com) | password |
+| Zainudeen    | [zainudeen@dsscare.com](mailto:zainudeen@dsscare.com)   | password |
 
-#### Doctor Login (`/doctor_login.php`)
-| Doctor | Email | Password |
-|--------|-------|----------|
-| Mathivanan M | mathivanan@dsscare.com | password |
-| Suresh R | suresh@dsscare.com | password |
-| Zainudeen | zainudeen@dsscare.com | password |
-| Maaran V | maaran@dsscare.com | password |
-| Rashika Shree | rashika@dsscare.com | password |
-| Karthick M | karthick@dsscare.com | password |
-| Arjun | arjun@dsscare.com | password |
-| Trisha V | trisha@dsscare.com | password |
-| Stalin K | stalin@dsscare.com | password |
-| Thulasi D | thulasi@dsscare.com | password |
-| Ganesh G | ganesh@dsscare.com | password |
+Doctor Login URL:
+
+```text
+http://localhost/dss_advanced_care/doctor_login.php
+```
 
 ---
 
-### 📁 File Structure
-```
+## 📁 Project Structure
+
+```text
 dss_advanced_care/
-├── config.php              ← DB config + session helpers
-├── index.php               ← Homepage
-├── register.php            ← Patient registration
-├── login.php               ← Patient login
-├── logout.php              ← Patient logout
-├── select_disease.php      ← Disease/condition selector
-├── doctors.php             ← Doctors listing with filters
-├── book_appointment.php    ← Appointment booking form
-├── confirmation.php        ← Booking confirmation
-├── my_appointments.php     ← Patient appointment history
-├── doctor_login.php        ← Doctor portal login
-├── doctor_dashboard.php    ← Doctor appointment dashboard
-├── doctor_logout.php       ← Doctor logout
+│
 ├── assets/
-│   ├── css/style.css       ← Main stylesheet
-│   └── js/main.js          ← JavaScript
-└── db/
-    └── setup.sql           ← Database setup script
+│   ├── css/
+│   └── js/
+│
+├── db/
+│   └── setup.sql
+│
+├── includes/
+│
+├── screenshots/
+│   ├── home-page.png
+│   └── doctor-page.png
+│
+├── index.php
+├── login.php
+├── register.php
+├── doctors.php
+├── doctor_login.php
+├── doctor_dashboard.php
+├── book_appointment.php
+├── confirmation.php
+├── my_appointments.php
+├── config.php
+└── README.md
 ```
 
 ---
 
-### 🗄️ Database Tables
-| Table | Description |
-|-------|-------------|
-| `users` | Patient accounts |
-| `doctors` | Doctor profiles |
-| `slots` | Available time slots |
-| `appointments` | Booked appointments |
+## 🗄️ Database Tables
+
+* users
+* doctors
+* appointments
+* slots
 
 ---
 
-### ✨ Features
-- ✅ Patient Registration & Login (PHP sessions + password hashing)
-- ✅ 11 Disease categories with icon-based UI
-- ✅ Doctor listing with filtering by specialization
-- ✅ SVG doctor profile illustrations
-- ✅ 7-day slot availability calendar
-- ✅ Full patient details form (age, height, weight, gender, food pref)
-- ✅ Dummy payment system (Pay at Hospital / Online Card/UPI)
-- ✅ Animated booking confirmation with reference number
-- ✅ Patient appointment history
-- ✅ Doctor dashboard with patient details expandable view
-- ✅ Responsive design (mobile-friendly)
-- ✅ Blue medical theme with Playfair Display typography
+## 🎯 Learning Outcomes
+
+* PHP Backend Development
+* MySQL Database Design
+* Session Management
+* CRUD Operations
+* Responsive Web Design
+* Authentication System
+* Full Stack Web Development
 
 ---
 
-### ⚠️ Notes
-- This is a demo system. The online payment is **simulated** (no real payment gateway)
-- Doctor passwords in the database use PHP's `password_hash()` — default demo password is `password`
-- Slots are generated for the next 7 days from the time you run `setup.sql`
+## 👨‍💻 Developer
+
+**Suresh R**
+
+B.Tech Information Technology
+
+Ramco Institute of Technology
 
 ---
 
-*Built with HTML, CSS, PHP & MySQL for XAMPP environment*
-*DSS Advanced Care Hospital — Chennai, Tamil Nadu*
+## 📌 Note
+
+This project was developed for academic and learning purposes. The payment system included in the project is a simulation and does not process real transactions.
